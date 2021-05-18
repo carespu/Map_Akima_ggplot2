@@ -23,7 +23,7 @@ gpsli <- interp(a$Longitude, a$Latitude, a$temp, duplicate = "median")#use inter
 image (gpsli, main = "Soil Temperature", ylab = 'Longitude', xlab = 'Latitude')#draw the raster
 contour(gpsli, add=TRUE) #draw the contourn
 
-## we can increase increase smoothness (using finer grid), in this example I use soil respiration :
+## we can increase  smoothness (using finer grid), in this example I use soil respiration :
 gpssmooth <-  with(a, interp(Longitude, Latitude, SR, xo=seq(min(Longitude),max(Longitude), length=100), yo=seq(min(Latitude),max(Latitude), length=100), duplicate = "median"))
 image (gpssmooth, main = "Soil Respiration")
 contour(gpssmooth, add=T)
